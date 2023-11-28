@@ -89,9 +89,10 @@ def main(dataset, build_type):
         with open('SETTINGS_%s.json' %args.dataset) as f:
             settings = json.load(f)
      # skip Patient 12, not able to read
+
     targets = [
             '1',
-            '2',
+            #'2',
             '3',
             '4',
             '5',
@@ -101,10 +102,11 @@ def main(dataset, build_type):
             '9',
             '10',
             '11',
-            '13',
+            #'12',
+            #'13',
             '14',
             '15',
-            # '16',
+            #'16',
             '17',
             '18',
             '19',
@@ -113,7 +115,7 @@ def main(dataset, build_type):
             '22',
             '23'
     ]
-    
+    targets = ['7','21','22','23']
     summary = {}
     epochs = 40
     batch_size = 32
@@ -123,15 +125,16 @@ def main(dataset, build_type):
         makedirs(ckpt_target)
         ictal_X, ictal_y = PrepData(target, type='ictal', settings=settings).apply()
         interictal_X, interictal_y = PrepData(target, type='interictal', settings=settings).apply()
+        
         X_train, y_train, X_val, y_val, X_test, y_test = train_val_test_split(ictal_X, ictal_y, interictal_X, interictal_y, 0.25, 0.35)
-        model = ConvNN(X_train.shape)
+        model = ConvNN(X_train.shape).to("cuda")
         fn_weights = "weights_%s_%s.h5" %(target, build_type)
         if os.path.exists(fn_weights):
             model.load_trained_weights(fn_weights)
         else:
-            model.fit(batch_size=32,epochs=2,mode=build_type, target = target, X_train = X_train, Y_train = y_train)
+            model.fit(batch_size=32,epochs=100,mode=build_type, target = target, X_train = X_train, Y_train = y_train)
             model.evaluate(X_test, y_test)
-    
+        
 if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser()

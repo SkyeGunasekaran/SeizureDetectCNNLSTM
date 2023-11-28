@@ -1,0 +1,58 @@
+Main
+
+Patient 1
+Test AUC is: 0.9379058070416094
+
+Patient 3
+Test AUC is: 0.6820725815953812
+
+Patient 4
+Test AUC is: 0.8114206581948518
+
+Patient 5
+Test AUC is: 0.9998677248677249
+
+Patient 6
+Test AUC is: 1.0
+
+Patient 7
+Test AUC is: 0.9807638280643188
+
+Patient 8
+Test AUC is: 0.32831439393939393
+
+Patient 9
+Test AUC is: 0.9980979827089337
+
+Patient 10
+Test AUC is: 0.999959196996899
+
+Patient 11
+Test AUC is: 0.9504082661290323
+
+Patient 14
+Test AUC is: 0.9893617021276596
+
+Patient 15
+Test AUC is: 0.9023809523809524
+
+Patient 17
+Test AUC is: 0.9874285714285714
+
+Patient 18
+Test AUC is: 0.5346354166666667
+
+Patient 19
+Test AUC is: 0.9998666666666667
+
+Patient 20
+Test AUC is: 0.8084553928095872
+
+Patient 21
+Test AUC is: 0.9278787878787879
+
+Patient 22
+Test AUC is: 0.3477450980392157
+
+Patient 23
+Test AUC is: 0.4597423510466988
